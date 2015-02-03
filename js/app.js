@@ -1,3 +1,7 @@
+//the global namespace for the app
+
+var app = {};
+
 $(function () {
     var frameWall = $('#frame-wall').html();
     var frameNew = $('#frame-new').html();

@@ -21,7 +21,7 @@ header {
     padding:0.5em;
     background: #60839B;
     color: white;
-
+    border-bottom: 0.25em solid #496477;
 }
 
 .header-bar, .header-preview-bar {
@@ -31,11 +31,11 @@ header {
 }
 
 .logo {
-    width: 13%;
+    width: 10%;
 }
 
 .logo-text {
-    font-size: 1.5em;
+    font-size: 3em;
     display: inline-block;
     font-family: 'Slabo 13px', 'Karla', sans-serif;
 }
@@ -65,18 +65,19 @@ header {
 }
 
 .timeframe {
-    width: 80%;
+    width: 70%;
     height: 6em;
     margin: 1em auto;
-    background: white;
-    border-right: 0.75em solid #C4BBB6;
-    border-top: 0.75em solid #816E6E;
-    border-bottom: 0.75em solid #816E6E;
-    border-left: 0.75em solid #C4BBB6;
+    background: #5a5a5a;
+    border-right: 0.75em solid #B4C5D0;
+    border-top: 0.75em solid #60839B;
+    border-bottom: 0.75em solid #496477;
+    border-left: 0.75em solid #D8E1E7;
     background: url("../img/clouds-gili-islands-indonesia-639.jpg");
     background-size: cover;
     padding: 1em;
     color: white;
+    text-shadow: 1px 1px 0 #5a5a5a;
     position: relative;
 }
 
@@ -132,16 +133,12 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    border-right: 2em solid #C4BBB6;
-    border-top: 2em solid #816E6E;
-    border-bottom: 2em solid #816E6E;
-    border-left: 2em solid #C4BBB6;
 }
 
 .cancel {
     position: fixed;
-    top: 4em;
-    right: 4em;
+    top: 2em;
+    right: 2em;
     width: 2.5em;
     height: 2.5em;
     font-size: 1em;
@@ -156,7 +153,6 @@ header {
 .frame-info-entry, .frame-info {
     margin: 5.5em auto;
     width: 80%;
-    color: white;
 }
 
 label {
@@ -195,10 +191,10 @@ input {
     background: url("../img/Screen Shot 2015-02-03 at 8.22.49 AM.png");
     background-size: cover;
     position: fixed;
-    bottom: 2em;
-    right: 2em;
-    left: 2em;
-    height: 8em;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 10em;
 
 }
 
@@ -209,8 +205,8 @@ input {
 
 .back-arrow {
     position: fixed;
-    top: 4em;
-    left: 4em;
+    top: 2em;
+    left: 2em;
     width: 2.5em;
     height: 2.5em;
     font-size: 1em;
