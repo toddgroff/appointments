@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Karla:400,700,400italic|Slabo+13px' rel='stylesheet' type='text/css'>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Frames</title>
+</head>
+
+<body>
+    <div class="app-view">
+
+    </div>
+
+    <script id="frame-wall" type="text/html">
+        <header>
+            <div class="header-bar">
+                <img class="logo" src="img/timeframes.svg">
+                <span class="logo-text">Time<br>Frames</span>
+                <a href="#menu" class="menu-icon">
+                </a>
+
+            </div>
+        </header>
+        <main class="frame-wall">
+            <img class="add-frame" src="img/timeframes-add.svg">
+            <div class="today">
+                <h2>Today</h2>
+                <div class="timeframe frame1">
+                <span class="preview-time">6:30pm</span>
+                <span class="preview-location">@ Phoenix Tacos</span>
+                <span class="preview-title">Dinner w/ Joe</span>    <button class="delete">X</button>
+                </div>
+            </div>
+            <div class="upcoming">
+                <h2>Upcoming</h2>
+                <div class="timeframe"
+                    <span class="preview-time"></span>
+                    <span class="preview-date"></span>
+                    <span class="preview-location"></span>
+                    <span class="preview-title"></span>
+                    <button class="delete">X</button>
+                </div>
+                <div class="timeframe"
+                    <span class="preview-time"></span>
+                    <span class="preview-date"></span>
+                    <span class="preview-location"></span>
+                    <span class="preview-title"></span>
+                    <button class="delete">X</button>
+                </div>
+                <div class="timeframe"
+                    <span class="preview-time"></span>
+                    <span class="preview-date"></span>
+                    <span class="preview-location"></span>
+                    <span class="preview-title"></span>
+                    <button class="delete">X</button>
+                </div>
+            </div>
+        </main>
+    </script>
+
+
+    <script id="frame-new" type="text/html">
+        <div class="frame-new">
+            <button class="cancel">X</button>
+            <div class="frame-info-entry">
+                <h1 class="new-frame-heading">New Frame</h1>
+                <form class="frame-info-form">
+                    <label>Title
+                        <input type="text">
+                    </label>
+                    <label>Date
+                        <input type="text">
+                    </label>
+                    <label>Time
+                        <input type="text">
+                    </label>
+                    <label>Location
+                        <input type="text">
+                    </label>
+                    <button class="save-frame">Save Frame</button>
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <script id="frame-view" type="text/html">
+        <div class="frame-view">
+            <div class="frame-view-header">
+                <button class="back-arrow"><</button>
+                <!-- <span class="edit-frame">Edit</span> -->
+            </div>
+            <div class="frame-info">
+                <h1 class="title"></h1>Dinner w/Joe</h1>
+                <span class="time">6:30pm</span>
+                <span class="date">today</span>
+                <span class="location">Phoenix Tacos<br>412 North St, Durham, NC 27813</span>
+            </div>
+            <div class="map">
+            </div>
+        </div>
+    </script>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/appointments.js"></script>
+
+</body>
+</html>

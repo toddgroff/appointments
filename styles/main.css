@@ -1,0 +1,230 @@
+body {
+    background: white;
+    height: 100%;
+    font-family: 'Karla', sans-serif;
+}
+
+button {
+    box-shadow: none;
+    background: #60839B;
+    font-weight: bold;
+    border-radius: none;
+    color: white;
+    border: none;
+}
+
+
+/*Frame Wall Styling*/
+
+header {
+    height: 100%
+    padding:0.5em;
+    background: #60839B;
+    color: white;
+
+}
+
+.header-bar, .header-preview-bar {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1em 0 1em 0;
+}
+
+.logo {
+    width: 13%;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    display: inline-block;
+    font-family: 'Slabo 13px', 'Karla', sans-serif;
+}
+
+.menu-icon {
+    position: relative;
+    float: right;
+}
+
+.menu-icon:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 1em;
+    width: 2em;
+    height: 0.3em;
+    background: white;
+    box-shadow:
+    0 0.5em 0 0 white,
+    0 1em 0 0 white;
+}
+
+.today, .upcoming {
+    margin: 1em auto;
+    width: 90%;
+    font-size: 1.25em;
+}
+
+.timeframe {
+    width: 80%;
+    height: 6em;
+    margin: 1em auto;
+    background: white;
+    border-right: 0.75em solid #C4BBB6;
+    border-top: 0.75em solid #816E6E;
+    border-bottom: 0.75em solid #816E6E;
+    border-left: 0.75em solid #C4BBB6;
+    background: url("../img/clouds-gili-islands-indonesia-639.jpg");
+    background-size: cover;
+    padding: 1em;
+    color: white;
+    position: relative;
+}
+
+.preview-time,
+.preview-location,
+.preview-date,
+.preview-title {
+    display: block;
+}
+
+.preview-time {
+    font-size: 2em;
+}
+
+.preview-title {
+    font-size: 1.5em;
+    padding-top: 0.5em;
+}
+
+.delete {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.frame1, .frame-view {
+    background: url("../img/field-meadow-summer-625-985x550.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+
+.add-frame {
+    width: 13%;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 1000;
+}
+
+.add-frame:active {
+    opacity: 0.5;
+}
+
+
+/*New Frame Styling*/
+
+.frame-new, .frame-view {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 2em solid #C4BBB6;
+    border-top: 2em solid #816E6E;
+    border-bottom: 2em solid #816E6E;
+    border-left: 2em solid #C4BBB6;
+}
+
+.cancel {
+    position: fixed;
+    top: 4em;
+    right: 4em;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1em;
+
+}
+
+.new-frame-heading {
+    font-size: 1.75em;
+    font-weight: bold;
+}
+
+.frame-info-entry, .frame-info {
+    margin: 5.5em auto;
+    width: 80%;
+    color: white;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: thin;
+}
+
+input {
+    background: #e2e2e2;
+    height: 3em;
+    width: 100%;
+    margin-top: 0.5em;
+    border: none;
+}
+
+.save-frame {
+    width: 100%;
+    font-size: 2em;
+    color: white;
+    margin: 1em auto;
+    background: #60839B;
+    padding: 0.25em;
+    border: none;
+    font-family: 'Karla', sans-serif;
+}
+
+
+/*Frame-view Styling*/
+.frame-view {
+    background:
+}
+
+.map {
+    background: url("../img/Screen Shot 2015-02-03 at 8.22.49 AM.png");
+    background-size: cover;
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    left: 2em;
+    height: 8em;
+
+}
+
+.frame-view-header {
+    width: 80%;
+    margin: 1em auto;
+}
+
+.back-arrow {
+    position: fixed;
+    top: 4em;
+    left: 4em;
+    width: 2.5em;
+    height: 2.5em;
+    font-size: 1em;
+}
+
+.title,
+.date,
+.time,
+.location {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.5em;
+}
+
+.title {
+    size: 3em;
+}
