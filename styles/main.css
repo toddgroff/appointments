@@ -21,7 +21,7 @@ header {
     padding:0.5em;
     background: #60839B;
     color: white;
-    border-bottom: 0.25em solid #496477;
+    border-bottom: 0.3em solid #496477;
 }
 
 .header-bar, .header-preview-bar {
@@ -95,6 +95,17 @@ header {
 .preview-title {
     font-size: 1.5em;
     padding-top: 0.5em;
+    font-family: 'Slabo 13px', sans-serif;
+}
+
+.delete-section {
+    width: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: white;
+    opacity: 0.5;
 }
 
 .delete {

@@ -1,4 +1,0 @@
-$(function () {
-    //manage all
-
-});

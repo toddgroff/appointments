@@ -25,62 +25,57 @@
             </div>
         </header>
         <main class="frame-wall">
-            <img class="add-frame" src="img/timeframes-add.svg">
+            <div>
+                <img class="add-frame" src="img/timeframes-add.svg">
+            </div>
             <div class="today">
-                <h2>Today</h2>
-                <div class="timeframe frame1">
-                <span class="preview-time">6:30pm</span>
-                <span class="preview-location">@ Phoenix Tacos</span>
-                <span class="preview-title">Dinner w/ Joe</span>    <button class="delete">X</button>
-                </div>
+                <ul>
+                    <% m.frames.forEach(function (appt) { %>
+                        <li class="timeframe-item" data-id="<%- appt.id %>">
+                            <div class="timeframe">
+                                <span class="preview-time"><%- appt.time %></span>
+                                <span class="preview-time"><%- appt.date %></span>
+                                <span class="preview-location"><%- appt.streetAddress %></span>
+                                <span class="preview-title"><%- appt.title %></span>
+                                <span class="delete-section">
+                                    <button class="delete">X</button>
+                                </span>
+                                <!-- <div class="confirm-delete">
+
+                                </div> -->
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
             </div>
             <div class="upcoming">
-                <h2>Upcoming</h2>
-                <div class="timeframe"
-                    <span class="preview-time"></span>
-                    <span class="preview-date"></span>
-                    <span class="preview-location"></span>
-                    <span class="preview-title"></span>
-                    <button class="delete">X</button>
-                </div>
-                <div class="timeframe"
-                    <span class="preview-time"></span>
-                    <span class="preview-date"></span>
-                    <span class="preview-location"></span>
-                    <span class="preview-title"></span>
-                    <button class="delete">X</button>
-                </div>
-                <div class="timeframe"
-                    <span class="preview-time"></span>
-                    <span class="preview-date"></span>
-                    <span class="preview-location"></span>
-                    <span class="preview-title"></span>
-                    <button class="delete">X</button>
-                </div>
             </div>
         </main>
     </script>
 
 
-    <script id="frame-new" type="text/html">
+    <script id="frame-edit" type="text/html">
         <div class="frame-new">
             <button class="cancel">X</button>
             <div class="frame-info-entry">
                 <h1 class="new-frame-heading">New Frame</h1>
                 <form class="frame-info-form">
                     <label>Title
-                        <input type="text">
+                        <input class="title-entry" type="text">
                     </label>
                     <label>Date
-                        <input type="text">
+                        <input class="date-entry" type="text">
                     </label>
                     <label>Time
-                        <input type="text">
+                        <input class="time-entry" type="text">
                     </label>
-                    <label>Location
-                        <input type="text">
+                    <label>Street Address
+                        <input class="street-address-entry" type="text">
                     </label>
-                    <button class="save-frame">Save Frame</button>
+                    <label>City, State
+                        <input class="city-state-entry" type="text">
+                    </label>
+                    <button class="save-frame">Frame it</button>
                 </form>
             </div>
         </div>
@@ -90,22 +85,33 @@
         <div class="frame-view">
             <div class="frame-view-header">
                 <button class="back-arrow"><</button>
-                <!-- <span class="edit-frame">Edit</span> -->
+                <span class="edit-frame">Edit</span>
             </div>
             <div class="frame-info">
-                <h1 class="title"></h1>Dinner w/Joe</h1>
-                <span class="time">6:30pm</span>
-                <span class="date">today</span>
-                <span class="location">Phoenix Tacos<br>412 North St, Durham, NC 27813</span>
+                <h1 class="title"></h1><%- m.title %></h1>
+                <span class="time"><%- m.time %></span>
+                <span class="date"><%- m.date %></span>
+                <span class="location"><%- m.streetAddress %><br><%- m.cityState %></span>
             </div>
             <div class="map">
             </div>
         </div>
     </script>
 
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/lodash/lodash.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/appointments.js"></script>
+    <script src="js/appointment-store.js"></script>
+    <script src="js/appointment.js"></script>
+    <script src="js/create-appointment.js"></script>
+    <script src="js/list-view.js"></script>
+    <script src="js/edit-view.js"></script>
+    <script src="js/details-view.js"></script>
+    <!-- <script src="js/page-manager.js"></script> -->
+    <script src="js/init.js"></script>
+
+
 
 </body>
 </html>
