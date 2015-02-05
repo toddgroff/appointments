@@ -18,3 +18,10 @@ app.showDetailsView = function (appt) {
         app.showEditView();
     });
 };
+
+
+// var item = $(this);
+// var appointmentId = item.data('id');
+// var appt = app.appointments.getById(appointmentId);
+//
+// app.showDetailsView(appt);
