@@ -31,18 +31,16 @@
             <div class="today">
                 <ul>
                     <% m.frames.forEach(function (appt) { %>
-                        <li class="timeframe-item" data-id="<%- appt.id %>">
-                            <div class="timeframe">
+                        <li class="timeframe-item">
+                            <div class="timeframe" data-id="<%- appt.id %>">
                                 <div class="preview-time"><%- appt.time %></div>
                                 <div class="preview-time"><%- appt.date %></div>
                                 <div class="preview-location"><%- appt.streetAddress %></div>
                                 <div class="preview-title"><%- appt.title %></div>
-                                <div class="delete-section">
-                                    <button class="delete">X</button>
+                                <div class="timeframe__options">
+                                    <button class="timeframe--delete">X</button>
+                                    <button class="timeframe--edit">Edit</button>
                                 </div>
-                                <!-- <div class="confirm-delete">
-
-                                </div> -->
                             </div>
                         </li>
                     <% }) %>
@@ -51,6 +49,19 @@
             <div class="upcoming">
             </div>
         </main>
+    </script>
+
+    <script id="modal-template" type="text/html">
+        <div class="modal">
+            <div class="modal-question">
+                <h2>Sure you want to remove this frame?</h2>
+            </div>
+            <div class="modal-selection">
+
+                <button class="close-modal">Cancel</button>
+                <button class="confirm-remove">Remove</button>
+            </div>
+        </div>
     </script>
 
     <script id="frame-new" type="text/html">
@@ -131,6 +142,7 @@
     <script src="js/appointment-store.js"></script>
     <script src="js/appointment.js"></script>
     <script src="js/create-appointment.js"></script>
+    <script src="js/show-modal.js"></script>
     <script src="js/list-view.js"></script>
     <script src="js/new-view.js"></script>
     <script src="js/edit-view.js"></script>

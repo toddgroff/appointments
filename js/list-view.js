@@ -9,17 +9,22 @@ app.showListView = function () {
 
     $('.add-frame').click(app.showNewView);
 
-    // $('.delete').click(function () {
-    //     var item = do something to display confirm frame
-    // });
+    $('.timeframe--delete').click(app.showModal);
 
-    $('.timeframe-item').click(function () {
+    $('.timeframe--edit').click(function () {
         var item = $(this);
-        console.log(item);
         var appointmentId = item.data('id');
-        console.log(appointmentId);
+        var appt = app.appointments.getById(appointmentId);
+
+        app.showEditView(appt);
+    });
+
+    $('.timeframe').click(function () {
+        var item = $(this);
+        var appointmentId = item.data('id');
         var appt = app.appointments.getById(appointmentId);
 
         app.showDetailsView(appt);
     });
+
 };

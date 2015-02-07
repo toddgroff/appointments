@@ -3,8 +3,6 @@ app.showDetailsView = function (appt) {
     var detailsViewHtml = $('#frame-view').html();
     var template = _.template(detailsViewHtml, { variable: 'm' });
 
-    console.log(appt);
-
     $('.app-view').html(template(appt));
 
     $('.back-arrow').click(function () {
