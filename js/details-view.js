@@ -1,12 +1,11 @@
 //displays the details view and binds events to that page
 app.showDetailsView = function (appt) {
     var detailsViewHtml = $('#frame-view').html();
-    var compiledTemplate = _.template(detailsViewHtml, { variable: 'm' });
+    var template = _.template(detailsViewHtml, { variable: 'm' });
 
     console.log(appt);
 
-    // $('.app-view').html(detailsViewHtml);
-    $('.app-view').html(compiledTemplate(appt));
+    $('.app-view').html(template(appt));
 
     $('.back-arrow').click(function () {
 
@@ -14,8 +13,11 @@ app.showDetailsView = function (appt) {
     });
 
     $('.edit-frame').click(function () {
+        var item = $(this);
+        var appointmentId = item.data('id');
+        var appt = app.appointments.getById(appointmentId);
 
-        app.showEditView();
+        app.showEditView(appt);
     });
 };
 

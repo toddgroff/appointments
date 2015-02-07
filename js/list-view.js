@@ -7,7 +7,7 @@ app.showListView = function () {
         frames: appts
     }));
 
-    $('.add-frame').click(app.showEditView);
+    $('.add-frame').click(app.showNewView);
 
     // $('.delete').click(function () {
     //     var item = do something to display confirm frame
@@ -15,7 +15,9 @@ app.showListView = function () {
 
     $('.timeframe-item').click(function () {
         var item = $(this);
+        console.log(item);
         var appointmentId = item.data('id');
+        console.log(appointmentId);
         var appt = app.appointments.getById(appointmentId);
 
         app.showDetailsView(appt);

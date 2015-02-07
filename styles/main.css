@@ -2,6 +2,7 @@ body {
     background: white;
     height: 100%;
     font-family: 'Karla', sans-serif;
+    color: #58646D;
 }
 
 button {
@@ -10,9 +11,13 @@ button {
     font-weight: bold;
     border-radius: none;
     color: white;
-    border: none;
+    border-width: 5px;
+    border-color: #9CB2C1;
 }
 
+button:focus {
+    outline: none;
+}
 
 /*Frame Wall Styling*/
 
@@ -21,7 +26,11 @@ header {
     padding:0.5em;
     background: #60839B;
     color: white;
-    border-bottom: 0.3em solid #496477;
+    border-bottom: 5px solid #58646D;
+    position: fixed;
+    top: 0;
+    z-index: 500;
+
 }
 
 .header-bar, .header-preview-bar {
@@ -31,11 +40,11 @@ header {
 }
 
 .logo {
-    width: 10%;
+    width: 8%;
 }
 
 .logo-text {
-    font-size: 3em;
+    font-size: 2.4em;
     display: inline-block;
     font-family: 'Slabo 13px', 'Karla', sans-serif;
 }
@@ -47,15 +56,18 @@ header {
 
 .menu-icon:before {
     content: "";
-    position: absolute;
-    right: 100%;
-    top: 1em;
-    width: 2em;
-    height: 0.3em;
+    float: right;
+    margin-top: 0.5em;
+    width: 2.0em;
+    height: 0.25em;
     background: white;
     box-shadow:
-    0 0.5em 0 0 white,
-    0 1em 0 0 white;
+    0 0.6em 0 0 white,
+    0 1.2em 0 0 white;
+}
+
+.frame-wall {
+    margin-top: 6.5em;
 }
 
 .today, .upcoming {
@@ -66,19 +78,27 @@ header {
 
 .timeframe {
     width: 70%;
-    height: 6em;
+    /*height: 6em;*/
     margin: 1em auto;
-    background: #5a5a5a;
-    border-right: 0.75em solid #B4C5D0;
-    border-top: 0.75em solid #60839B;
-    border-bottom: 0.75em solid #496477;
-    border-left: 0.75em solid #D8E1E7;
-    background: url("../img/clouds-gili-islands-indonesia-639.jpg");
+    background: #7a7a7a;
+    border-top: 0.75em solid #9CB2C1;
+    border-right: 0.75em solid #58646D;
+    border-bottom: 0.75em solid #58646D;
+    border-left: 0.75em solid #9CB2C1;
+    /*background: url("../img/clouds-gili-islands-indonesia-639.jpg");*/
     background-size: cover;
     padding: 1em;
     color: white;
     text-shadow: 1px 1px 0 #5a5a5a;
     position: relative;
+    overflow: auto;
+}
+
+.timeframe:active {
+    border-top: 0.75em solid #58646D;
+    border-right: 0.75em solid #9CB2C1;
+    border-bottom: 0.75em solid #9CB2C1;
+    border-left: 0.75em solid #58646D;
 }
 
 .preview-time,
@@ -124,7 +144,7 @@ header {
 .add-frame {
     width:  18%;
     position: fixed;
-    bottom: 5%;
+    bottom: 3%;
     right: 5%;
     z-index: 1000;
 }
@@ -147,7 +167,7 @@ header {
 }
 
 .cancel {
-    position: fixed;
+    position: absolute;
     top: 2em;
     right: 2em;
     width: 2.5em;
@@ -159,26 +179,39 @@ header {
 .new-frame-heading {
     font-size: 1.75em;
     font-weight: bold;
+    font-family: 'slabo 13px', sans-serif;
+    padding-bottom: 0.75em;
 }
 
 .frame-info-entry, .frame-info {
-    margin: 5.5em auto;
+    margin: 5em auto 0 auto;
     width: 80%;
 }
 
 label {
     display: block;
-    margin-top: 1em;
-    font-size: 1.5em;
+    margin-top: 0.5em;
+    font-size: 1.15em;
     font-weight: thin;
 }
 
 input {
-    background: #e2e2e2;
-    height: 3em;
+    background: #E5E5E5;
     width: 100%;
-    margin-top: 0.5em;
+    padding: 0.25em;
+    margin-top: 0.25em;
     border: none;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    font-size: 1.5em;
+    color: #58646D;
+}
+
+input:focus {
+    border: 2px solid #9CB2C1;
+    background: white;
+    outline: none;
+    margin-bottom: -4px;
 }
 
 .save-frame {
@@ -188,8 +221,9 @@ input {
     margin: 1em auto;
     background: #60839B;
     padding: 0.25em;
-    border: none;
-    font-family: 'Karla', sans-serif;
+    border-width: 5px;
+    font-family: 'Slabo 13px', sans-serif;
+    box-sizing: border-box;
 }
 
 

@@ -19,7 +19,7 @@
             <div class="header-bar">
                 <img class="logo" src="img/timeframes.svg">
                 <span class="logo-text">Frames</span>
-                <a href="#menu" class="menu-icon">
+                <a href="#" class="menu-icon">
                 </a>
 
             </div>
@@ -33,13 +33,13 @@
                     <% m.frames.forEach(function (appt) { %>
                         <li class="timeframe-item" data-id="<%- appt.id %>">
                             <div class="timeframe">
-                                <span class="preview-time"><%- appt.time %></span>
-                                <span class="preview-time"><%- appt.date %></span>
-                                <span class="preview-location"><%- appt.streetAddress %></span>
-                                <span class="preview-title"><%- appt.title %></span>
-                                <span class="delete-section">
+                                <div class="preview-time"><%- appt.time %></div>
+                                <div class="preview-time"><%- appt.date %></div>
+                                <div class="preview-location"><%- appt.streetAddress %></div>
+                                <div class="preview-title"><%- appt.title %></div>
+                                <div class="delete-section">
                                     <button class="delete">X</button>
-                                </span>
+                                </div>
                                 <!-- <div class="confirm-delete">
 
                                 </div> -->
@@ -53,29 +53,55 @@
         </main>
     </script>
 
-
-    <script id="frame-edit" type="text/html">
+    <script id="frame-new" type="text/html">
         <div class="frame-new">
             <button class="cancel">X</button>
             <div class="frame-info-entry">
                 <h1 class="new-frame-heading">New Frame</h1>
                 <form class="frame-info-form">
                     <label>Title
-                        <input class="title-entry" type="text" value="<%- m.title %>">
+                        <input required="required" class="title-entry" type="text">
                     </label>
                     <label>Date
-                        <input class="date-entry" type="text" value="<%- m.date %>">
+                        <input required="required" class="date-entry" type="text">
                     </label>
                     <label>Time
-                        <input class="time-entry" type="text" value="<%- m.time %>">
+                        <input required="required" class="time-entry" type="text">
                     </label>
-                    <label>Street Address
+                    <label>Address
+                        <input class="street-address-entry" type="text">
+                    </label>
+                    <label>City, State
+                        <input class="city-state-entry" type="text">
+                    </label>
+                    <button class="save-frame">Frame it</button>
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <script id="frame-edit" type="text/html">
+        <div class="frame-edit">
+            <button class="cancel" data-id="<%- m.id %>">X</button>
+            <div class="frame-info-entry">
+                <h1 class="new-frame-heading">Edit Frame</h1>
+                <form class="frame-info-form">
+                    <label>Title
+                        <input required="required" class="title-entry" type="text" value="<%- m.title %>">
+                    </label>
+                    <label>Date
+                        <input required="required" class="date-entry" type="text" value="<%- m.date %>">
+                    </label>
+                    <label>Time
+                        <input required="required" class="time-entry" type="text" value="<%- m.time %>">
+                    </label>
+                    <label>Address
                         <input class="street-address-entry" type="text" value="<%- m.streetAddress %>">
                     </label>
                     <label>City, State
                         <input class="city-state-entry" type="text" value="<%- m.cityState %>">
                     </label>
-                    <button class="save-frame">Frame it</button>
+                    <button class="save-frame">Reframe it</button>
                 </form>
             </div>
         </div>
@@ -85,7 +111,7 @@
         <div class="frame-view">
             <div class="frame-view-header">
                 <button class="back-arrow"><</button>
-                <span class="edit-frame">Edit</span>
+                <button class="edit-frame" data-id="<%- m.id %>">Edit</button>
             </div>
             <div class="frame-info">
                 <h1 class="title"></h1><%- m.title %></h1>
@@ -106,6 +132,7 @@
     <script src="js/appointment.js"></script>
     <script src="js/create-appointment.js"></script>
     <script src="js/list-view.js"></script>
+    <script src="js/new-view.js"></script>
     <script src="js/edit-view.js"></script>
     <script src="js/details-view.js"></script>
     <!-- <script src="js/page-manager.js"></script> -->
