@@ -70,6 +70,24 @@ header {
     margin-top: 6.5em;
 }
 
+.no-frames--content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: thin;
+    opacity: 0.4;
+    visibility: visible;
+}
+
+.hide-no-frames {
+    visibility: hidden;
+}
+
 .today, .upcoming {
     margin: 1em auto;
     width: 90%;
@@ -139,14 +157,21 @@ header {
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.85);
     z-index: 1000;
+}
 
+.modal__content {
+    color: white;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .add-frame {

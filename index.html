@@ -31,15 +31,15 @@
             <div class="today">
                 <ul>
                     <% m.frames.forEach(function (appt) { %>
-                        <li class="timeframe-item">
+                        <li class="timeframe-item" data-id="<%- appt.id %>">
                             <div class="timeframe" data-id="<%- appt.id %>">
                                 <div class="preview-time"><%- appt.time %></div>
                                 <div class="preview-time"><%- appt.date %></div>
                                 <div class="preview-location"><%- appt.streetAddress %></div>
                                 <div class="preview-title"><%- appt.title %></div>
-                                <div class="timeframe__options">
-                                    <button class="timeframe--delete">X</button>
+                                <div class="timeframe__options" data-id="<%- appt.id %>">
                                     <button class="timeframe--edit">Edit</button>
+                                    <button class="timeframe--remove">X</button>
                                 </div>
                             </div>
                         </li>
@@ -48,18 +48,27 @@
             </div>
             <div class="upcoming">
             </div>
+            <div class="no-frames">
+            </div>
         </main>
+    </script>
+
+    <script id="no-frames" type="text/html">
+        <div class="no-frames--content">
+            <h1 class="no-frames--title">You don't have any frames hanging right now. <br><br>Use the add button below to make a new one.</h1>
+        </div>
     </script>
 
     <script id="modal-template" type="text/html">
         <div class="modal">
-            <div class="modal-question">
-                <h2>Sure you want to remove this frame?</h2>
-            </div>
-            <div class="modal-selection">
-
-                <button class="close-modal">Cancel</button>
-                <button class="confirm-remove">Remove</button>
+            <div class="modal__content">
+                <div class="modal-question">
+                    <h2>Sure you want to remove this frame?</h2>
+                </div>
+                <div class="modal-selection">
+                    <button class="close-modal">Cancel</button>
+                    <button class="confirm-remove">Remove</button>
+                </div>
             </div>
         </div>
     </script>
@@ -119,10 +128,11 @@
     </script>
 
     <script id="frame-view" type="text/html">
-        <div class="frame-view">
+        <div class="frame-view" data-id="<%- m.id %>">
             <div class="frame-view-header">
                 <button class="back-arrow"><</button>
                 <button class="edit-frame" data-id="<%- m.id %>">Edit</button>
+                <button class="remove-frame" data-id="<%- m.id %>">Remove</button>
             </div>
             <div class="frame-info">
                 <h1 class="title"></h1><%- m.title %></h1>
@@ -142,7 +152,8 @@
     <script src="js/appointment-store.js"></script>
     <script src="js/appointment.js"></script>
     <script src="js/create-appointment.js"></script>
-    <script src="js/show-modal.js"></script>
+    <script src="js/show-frame-modal.js"></script>
+    <script src="js/show-details-modal.js"></script>
     <script src="js/list-view.js"></script>
     <script src="js/new-view.js"></script>
     <script src="js/edit-view.js"></script>

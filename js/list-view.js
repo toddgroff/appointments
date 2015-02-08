@@ -2,17 +2,23 @@ app.showListView = function () {
     var listViewHtml = $('#frame-wall').html();
     var appts = app.appointments.query();
     var template = _.template(listViewHtml, {variable: 'm'});
+    var noFrames = $('#no-frames').html();
 
-    $('.app-view').html(template ( {
+    $('.app-view').html(template( {
         frames: appts
     }));
 
+    if (appts === undefined || appts.length === 0) {
+        $('.no-frames').html(noFrames);
+        $('.no-frames').fadeIn('slow');
+    };
+
     $('.add-frame').click(app.showNewView);
 
-    $('.timeframe--delete').click(app.showModal);
+    $('.timeframe--remove').click(app.showFrameModal);
 
-    $('.timeframe--edit').click(function () {
-        var item = $(this);
+    $('.timeframe--edit').click(function() {
+        var item = $(this).closest('div');
         var appointmentId = item.data('id');
         var appt = app.appointments.getById(appointmentId);
 
