@@ -6,6 +6,4 @@ $(function() {
     app.appointments.load();
 
     app.showListView();
-
-
 });

@@ -1,6 +1,5 @@
 //capturing form input and creating instances of app.Appointment
-
-app.createAppointment = function () {
+app.createAppointment = function() {
     var createAppointment = {
         title: $('.title-entry').val(),
         date: $('.date-entry').val(),

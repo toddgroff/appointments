@@ -14,4 +14,8 @@ app.showNewView = function () {
 
         return false;
     });
+
+    $(function() {
+        $('.date-entry').datepicker({ minDate: -20});
+    });
 };

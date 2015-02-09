@@ -7,7 +7,7 @@ app.AppointmentStore = function () {
             self.save();
         },
 
-        query: function() {
+        query: function () {
             return appts;
         },
 
@@ -36,7 +36,7 @@ app.AppointmentStore = function () {
             // return arrId[0];
         },
 
-        removeById: function(appt) {
+        removeById: function (appt) {
             appts = appts.filter(function (item) {
                 return item.id !== appt.id;
                 //remove maybe use splice instead

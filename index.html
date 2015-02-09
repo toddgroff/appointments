@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="styles/reset.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Karla:400,700,400italic|Slabo+13px' rel='stylesheet' type='text/css'>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Frames</title>
+<head>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="http://fonts.googleapis.com/css?family=Karla:400,700,400italic|Slabo+13px" rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Frames</title>
 </head>
 
 <body>
@@ -14,154 +15,160 @@
 
     </div>
 
-    <script id="frame-wall" type="text/html">
-        <header>
-            <div class="header-bar">
-                <img class="logo" src="img/timeframes.svg">
-                <span class="logo-text">Frames</span>
-                <a href="#" class="menu-icon">
-                </a>
-
-            </div>
-        </header>
-        <main class="frame-wall">
-            <div>
-                <img class="add-frame" src="img/timeframes-add.svg">
-            </div>
-            <div class="today">
-                <ul>
-                    <% m.frames.forEach(function (appt) { %>
-                        <li class="timeframe-item" data-id="<%- appt.id %>">
-                            <div class="timeframe" data-id="<%- appt.id %>">
-                                <div class="preview-time"><%- appt.time %></div>
-                                <div class="preview-time"><%- appt.date %></div>
-                                <div class="preview-location"><%- appt.streetAddress %></div>
-                                <div class="preview-title"><%- appt.title %></div>
-                                <div class="timeframe__options" data-id="<%- appt.id %>">
-                                    <button class="timeframe--edit">Edit</button>
-                                    <button class="timeframe--remove">X</button>
-                                </div>
-                            </div>
-                        </li>
-                    <% }) %>
-                </ul>
-            </div>
-            <div class="upcoming">
-            </div>
-            <div class="no-frames">
-            </div>
-        </main>
-    </script>
-
-    <script id="no-frames" type="text/html">
-        <div class="no-frames--content">
-            <h1 class="no-frames--title">You don't have any frames hanging right now. <br><br>Use the add button below to make a new one.</h1>
-        </div>
-    </script>
-
-    <script id="modal-template" type="text/html">
-        <div class="modal">
-            <div class="modal__content">
-                <div class="modal-question">
-                    <h2>Sure you want to remove this frame?</h2>
-                </div>
-                <div class="modal-selection">
-                    <button class="close-modal">Cancel</button>
-                    <button class="confirm-remove">Remove</button>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <script id="frame-new" type="text/html">
-        <div class="frame-new">
-            <button class="cancel">X</button>
-            <div class="frame-info-entry">
-                <h1 class="new-frame-heading">New Frame</h1>
-                <form class="frame-info-form">
-                    <label>Title
-                        <input required="required" class="title-entry" type="text">
-                    </label>
-                    <label>Date
-                        <input required="required" class="date-entry" type="text">
-                    </label>
-                    <label>Time
-                        <input required="required" class="time-entry" type="text">
-                    </label>
-                    <label>Address
-                        <input class="street-address-entry" type="text">
-                    </label>
-                    <label>City, State
-                        <input class="city-state-entry" type="text">
-                    </label>
-                    <button class="save-frame">Frame it</button>
-                </form>
-            </div>
-        </div>
-    </script>
-
-    <script id="frame-edit" type="text/html">
-        <div class="frame-edit">
-            <button class="cancel" data-id="<%- m.id %>">X</button>
-            <div class="frame-info-entry">
-                <h1 class="new-frame-heading">Edit Frame</h1>
-                <form class="frame-info-form">
-                    <label>Title
-                        <input required="required" class="title-entry" type="text" value="<%- m.title %>">
-                    </label>
-                    <label>Date
-                        <input required="required" class="date-entry" type="text" value="<%- m.date %>">
-                    </label>
-                    <label>Time
-                        <input required="required" class="time-entry" type="text" value="<%- m.time %>">
-                    </label>
-                    <label>Address
-                        <input class="street-address-entry" type="text" value="<%- m.streetAddress %>">
-                    </label>
-                    <label>City, State
-                        <input class="city-state-entry" type="text" value="<%- m.cityState %>">
-                    </label>
-                    <button class="save-frame">Reframe it</button>
-                </form>
-            </div>
-        </div>
-    </script>
-
-    <script id="frame-view" type="text/html">
-        <div class="frame-view" data-id="<%- m.id %>">
-            <div class="frame-view-header">
-                <button class="back-arrow"><</button>
-                <button class="edit-frame" data-id="<%- m.id %>">Edit</button>
-                <button class="remove-frame" data-id="<%- m.id %>">Remove</button>
-            </div>
-            <div class="frame-info">
-                <h1 class="title"></h1><%- m.title %></h1>
-                <span class="time"><%- m.time %></span>
-                <span class="date"><%- m.date %></span>
-                <span class="location"><%- m.streetAddress %><br><%- m.cityState %></span>
-            </div>
-            <div class="map">
-            </div>
-        </div>
-    </script>
-
-
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/lodash/lodash.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/appointment-store.js"></script>
-    <script src="js/appointment.js"></script>
-    <script src="js/create-appointment.js"></script>
-    <script src="js/show-frame-modal.js"></script>
-    <script src="js/show-details-modal.js"></script>
-    <script src="js/list-view.js"></script>
-    <script src="js/new-view.js"></script>
-    <script src="js/edit-view.js"></script>
-    <script src="js/details-view.js"></script>
-    <!-- <script src="js/page-manager.js"></script> -->
-    <script src="js/init.js"></script>
-
-
-
 </body>
+
+<script id="frame-wall" type="text/html">
+    <header>
+        <div class="header-bar">
+            <img class="logo" src="img/timeframes.svg">
+            <span class="logo-text">Frames</span>
+            <a href="#" class="menu-icon">
+            </a>
+
+        </div>
+    </header>
+    <main class="frame-wall">
+        <div>
+            <img class="add-frame" src="img/timeframes-add.svg">
+        </div>
+        <div class="today">
+            <ul>
+                <% m.frames.forEach(function (appt) { %>
+                    <li class="timeframe-item" data-id="<%- appt.id %>">
+                        <div class="timeframe" data-id="<%- appt.id %>">
+                            <div class="preview-time"><%- appt.time %></div>
+                            <div class="preview-time"><%- appt.date %></div>
+                            <div class="preview-location"><%- appt.streetAddress %></div>
+                            <div class="preview-title"><%- appt.title %></div>
+                            <div class="preview-temperature"></div>
+                            <div class="timeframe__options" data-id="<%- appt.id %>">
+                                <span class="timeframe--edit">c</span>
+                                <span class="timeframe--remove">b</span>
+                            </div>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
+        <div class="upcoming">
+        </div>
+        <div class="no-frames">
+        </div>
+    </main>
+</script>
+
+<script id="no-frames" type="text/html">
+    <div class="no-frames--content">
+        <h1 class="no-frames--title">You don't have any frames hanging right now. <br><br>Use the add button below to make a new one.</h1>
+    </div>
+</script>
+
+<script id="modal-template" type="text/html">
+    <div class="modal">
+        <div class="modal__content">
+            <div class="modal-question">
+                <h2>Sure you want to remove this frame?</h2>
+            </div>
+            <div class="modal-selection">
+                <span class="close-modal" data-icon="a"> Cancel</span>
+                <span class="confirm-remove" data-icon="b"> Remove</span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="frame-new" type="text/html">
+    <div class="frame-new">
+        <span class="cancel">a</span>
+        <div class="frame-info-entry">
+            <h1 class="new-frame-heading">New Frame</h1>
+            <form class="frame-info-form">
+                <label>Title
+                    <input required="required" class="title-entry" type="text">
+                </label>
+                <label>Date
+                    <input required="required" class="date-entry" type="text">
+                </label>
+                <label>Time
+                    <input required="required" class="time-entry" type="text">
+                </label>
+                <label>Address
+                    <input class="street-address-entry" type="text">
+                </label>
+                <label>City, State
+                    <input class="city-state-entry" type="text">
+                </label>
+                <button class="save-frame">Frame it</button>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script id="frame-edit" type="text/html">
+    <div class="frame-edit">
+        <span class="cancel" data-id="<%- m.id %>">a</span>
+        <div class="frame-info-entry">
+            <h1 class="new-frame-heading">Edit Frame</h1>
+            <form class="frame-info-form" data-id="<%- m.id %>">
+                <label>Title
+                    <input required="required" class="title-entry" type="text" value="<%- m.title %>">
+                </label>
+                <label>Date
+                    <input required="required" class="date-entry" type="text" value="<%- m.date %>">
+                </label>
+                <label>Time
+                    <input required="required" class="time-entry" type="text" value="<%- m.time %>">
+                </label>
+                <label>Address
+                    <input class="street-address-entry" type="text" value="<%- m.streetAddress %>">
+                </label>
+                <label>City, State
+                    <input class="city-state-entry" type="text" value="<%- m.cityState %>">
+                </label>
+                <button class="save-frame" data-id="<%- m.id %>">Reframe it</button>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script id="frame-view" type="text/html">
+    <div class="frame-view" data-id="<%- m.id %>">
+        <div class="frame-view-header">
+            <span class="back-arrow">e</span>
+            <span class="edit-frame" data-id="<%- m.id %>">c</span>
+            <span class="remove-frame" data-id="<%- m.id %>">b</span>
+        </div>
+        <div class="frame-info">
+            <h1 class="title"></h1><%- m.title %></h1>
+            <span class="time"><%- m.time %></span>
+            <span class="date"><%- m.date %></span>
+            <span class="location"><%- m.streetAddress %><br><%- m.cityState %></span>
+            <span class="temperature"></span>
+            <span class="precipitation"></span>
+        </div>
+        <div class="map">
+        </div>
+    </div>
+</script>
+
+<script id="weather-data" type="text/html">
+
+</script>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/appointment-store.js"></script>
+<script src="js/appointment.js"></script>
+<script src="js/create-appointment.js"></script>
+<script src="js/show-frame-modal.js"></script>
+<script src="js/show-details-modal.js"></script>
+<script src="js/list-view.js"></script>
+<script src="js/new-view.js"></script>
+<script src="js/edit-view.js"></script>
+<script src="js/details-view.js"></script>
+<!-- <script src="js/page-manager.js"></script> -->
+<script src="js/init.js"></script>
+
 </html>

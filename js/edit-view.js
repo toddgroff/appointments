@@ -3,7 +3,6 @@ app.showEditView = function (appt) {
     var editViewHtml = $('#frame-edit').html();
     var template = _.template(editViewHtml, { variable: 'm' });
 
-    // $('.app-view').html(editViewHtml);
     $('.app-view').html(template(appt));
 
     $('.cancel').click(function () {
@@ -14,50 +13,33 @@ app.showEditView = function (appt) {
         app.showDetailsView(appt);
     });
 
-    $('.frame-info-form').submit(function () {
+    $('.frame-info-form').submit(function() {
+        var item = $(this);
+        var appointmentId = item.data('id');
+        var appt = app.appointments.getById(appointmentId);
 
-        app.createAppointment();
+        var updateAppointment = {
+            title: $('.title-entry').val(),
+            date: $('.date-entry').val(),
+            time: $('.time-entry').val(),
+            streetAddress: $('.street-address-entry').val(),
+            cityState: $('.city-state-entry').val(),
+            id: appointmentId
+        };
 
-        app.showListView();
+        app.appointments.removeById(appt);
+
+        app.appointments.add(app.Appointment(updateAppointment));
+
+        app.appointments.save();
+
+        app.showDetailsView();
 
         return false;
     });
+
+    $(function() {
+        $('.date-entry').datepicker({ minDate: -20});
+    });
+
 };
-
-//
-// app.showListView = function () {
-//     var listViewHtml = $('#frame-wall').html();
-//     var appts = app.appointments.query();
-//     var template = _.template(listViewHtml, {variable: 'm'});
-//
-//     $('.app-view').html(template ( {
-//         frames: appts
-//     }));
-//
-//     $('.add-frame').click(app.showEditView);
-//
-//     $('.timeframe').click(function () {
-//         var item = $(this);
-//         var appointmentId = item.data('id');
-//         var appt = app.appointments.getById(appointmentId);
-//
-//         app.showEditView(appt);
-//     });
-// };
-
-// app.showEditScreen = function () {
-//     $('main').html($('#editPage').html());
-//
-//     $('form').submit(function () {
-//         var appt = app.Appointment({
-//             title: $('input[name=title]').val(),
-//             date: $('input[name=date]').val()
-//         });
-//
-//         app.appointments.add(appt);
-//
-//         app.showListScreen();
-//
-//         return false;
-//     });
-// };

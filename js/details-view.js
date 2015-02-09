@@ -19,18 +19,4 @@ app.showDetailsView = function(appt) {
     });
 
     $('.remove-frame').click(app.showDetailsModal);
-
-    //     function(e) {
-    //     var item = $(this);
-    //     var appointmentId = item.data('id');
-    //     var appt = app.appointments.getById(appointmentId);
-    //
-    //     e.stopPropagation();
-    //
-    //     app.appointments.removeById(appt);
-    //
-    //     app.appointments.save();
-    //
-    //     app.showListView();
-    // });
 };

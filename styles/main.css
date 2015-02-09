@@ -3,6 +3,7 @@ body {
     height: 100%;
     font-family: 'Karla', sans-serif;
     color: #58646D;
+    font-weight: 400;
 }
 
 button {
@@ -17,6 +18,16 @@ button {
 
 button:focus {
     outline: none;
+}
+
+.cancel,
+.timeframe--edit,
+.timeframe--remove,
+.edit-frame,
+.back-arrow,
+.remove-frame {
+    font-family: "appointments-icons";
+    font-size: 36px;
 }
 
 /*Frame Wall Styling*/
@@ -157,7 +168,7 @@ header {
 }
 
 .modal {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -168,10 +179,17 @@ header {
 
 .modal__content {
     color: white;
-    position: fixed;
-    top: 40%;
+    width: 85%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.close-modal,
+.confirm-remove {
+    font-size: 1.15em;
 }
 
 .add-frame {
@@ -202,12 +220,8 @@ header {
 
 .cancel {
     position: absolute;
-    top: 2em;
-    right: 2em;
-    width: 2.5em;
-    height: 2.5em;
-    font-size: 1em;
-
+    top: 1em;
+    right: 1em;
 }
 
 .new-frame-heading {
@@ -284,11 +298,21 @@ input:focus {
 
 .back-arrow {
     position: fixed;
-    top: 2em;
-    left: 2em;
-    width: 2.5em;
-    height: 2.5em;
-    font-size: 1em;
+    top: 1em;
+    left: 1em;
+}
+
+.edit-frame {
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.remove-frame {
+    position: fixed;
+    top: 1em;
+    right: 1em;
 }
 
 .title,
@@ -298,6 +322,45 @@ input:focus {
     display: block;
     font-size: 1em;
     margin-top: 1.5em;
+}
+
+.ui-datepicker {
+    background: white;
+    width: 80%;
+    border: 2px solid #9CB2C1;
+    border-top: none;
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-title,
+.ui-datepicker-calendar {
+    width: 100%;
+}
+
+.ui-datepicker-calendar {
+    margin: 0 0.75em;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-title {
+    text-align: center;
+}
+.ui-datepicker-next,
+.ui-datepicker-prev {
+    padding: 0 4em 0 3.5em;
+}
+.ui-datepicker-calendar thead {
+    text-align: left;
+}
+
+.ui-state-default {
+    text-decoration: none;
+}
+
+td:hover {
+    background-color: #e5e5e5;
 }
 
 .title {

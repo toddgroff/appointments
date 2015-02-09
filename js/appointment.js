@@ -1,5 +1,4 @@
 //The appointment constructor creates the appointment object
-
 app.Appointment = function (spec) {
     if (!spec.title || spec.title.trim() === '') {
         throw 'Title is required';
