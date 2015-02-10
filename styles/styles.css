@@ -56,3 +56,9 @@
 .icon-chevron-left:before {
   content: "e";
 }
+.icon-timeframes-add:before {
+  content: "g";
+}
+.icon-timeframes:before {
+  content: "h";
+}

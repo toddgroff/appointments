@@ -27,13 +27,15 @@ app.showEditView = function (appt) {
             id: appointmentId
         };
 
+        var editedFrame = app.Appointment(updateAppointment);
+
         app.appointments.removeById(appt);
 
-        app.appointments.add(app.Appointment(updateAppointment));
+        app.appointments.add(editedFrame);
 
         app.appointments.save();
 
-        app.showDetailsView();
+        app.showDetailsView(editedFrame);
 
         return false;
     });
