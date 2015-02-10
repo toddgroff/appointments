@@ -226,20 +226,30 @@ header {
     bottom: 3%;
     right: 5%;
     z-index: 1000;
-    text-shadow: 0 2px 0 white;
 }
 
 .add-frame:hover {
     color: #9CB2C1
 }
 
+.add-frame-container:after {
+    content: "g";
+    font-family: "appointments-icons";
+    font-size: 5.4rem;
+    color: white;
+    position: fixed;
+    bottom: 2.5%;
+    right: 4.2%;
+    z-index: 500;
+}
+
 .add-frame-container:before {
     content: "";
     width: 3.25em;
-    height: 3.25em;
+    height: 3.65em;
     background-color: white;
     position: fixed;
-    bottom: 3%;
+    bottom: 2.5%;
     right: 8%;
     z-index: 999;
 }

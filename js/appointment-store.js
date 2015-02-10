@@ -26,7 +26,7 @@ app.AppointmentStore = function () {
         },
 
         load: function () {
-            appts = JSON.parse(localStorage.getItem('appts') || '[]');
+            appts = JSON.parse(localStorage.getItem('appts') || '[]').map(app.Appointment);
         },
 
         save: function () {

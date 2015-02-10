@@ -1,6 +1,11 @@
 app.showListView = function () {
     var listViewHtml = $('#frame-wall').html();
-    var appts = app.appointments.query();
+    var appts = app.appointments.query().sort(function(a, b) {
+            if (a.dateTime() < b.dateTime()) {
+                return -1;
+            }
+            return 1;
+        });
     var template = _.template(listViewHtml, {variable: 'm'});
     var noFrames = $('#no-frames').html();
 

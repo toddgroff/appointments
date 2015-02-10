@@ -14,7 +14,7 @@ app.Appointment = function (spec) {
         cityState: spec.cityState,
         id: spec.id,
         dateTime: function () {
-            return self.date + ' ' + self.time;
+            return new Date(self.date + ' ' + self.time);
         }
     };
 
