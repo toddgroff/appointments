@@ -1,13 +1,16 @@
-//uses ajax to import current whether
-$(function () {
-    var weatherTemplate = _.template($('#frame-view').html(), { variable: 'm' });
+//uses ajax to import weather for city of event
+app.weather = function (appt) {
+    var weather = $('#weather-data').html();
+    var weatherTemplate = _.template(weather, {variable: 'm'});
+    var cityState = appt.cityState;
+    var cityStateEsc = cityState.replace(/\s/g,'');
 
-    $.getJSON('http://api.openweathermap.org/data/2.5/forecast?q=' + <%- m.cityState %>)
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + cityStateEsc)
     .done(function (data) {
-        $('.app-view').html(weatherTemplate(data));
+        $('.weather-container').html(weatherTemplate(data));
     })
     .fail(function (request, status, err) {
         console.log(err);
-        alert('Failed to connect to Open Weather Map... See console for details.');
+        alert('Failed to connect to weather data... See console for details.');
     });
-});
+};

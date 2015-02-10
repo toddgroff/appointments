@@ -20,7 +20,8 @@
 <script id="frame-wall" type="text/html">
     <header>
         <div class="header-bar">
-            <img class="logo" src="img/timeframes.svg">
+            <span class=logo-icon>h</span>
+            <!-- <img class="logo" src="img/timeframes.svg"> -->
             <span class="logo-text">Frames</span>
             <a href="#" class="menu-icon">
             </a>
@@ -28,8 +29,9 @@
         </div>
     </header>
     <main class="frame-wall">
-        <div>
-            <img class="add-frame" src="img/timeframes-add.svg">
+        <div class="add-frame-container">
+            <span class="add-frame">g</span>
+            <!-- <img class="add-frame" src="img/timeframes-add.svg"> -->
         </div>
         <div class="today">
             <ul>
@@ -140,11 +142,10 @@
         </div>
         <div class="frame-info">
             <h1 class="title"></h1><%- m.title %></h1>
-            <span class="time"><%- m.time %></span>
-            <span class="date"><%- m.date %></span>
-            <span class="location"><%- m.streetAddress %><br><%- m.cityState %></span>
-            <span class="temperature"></span>
-            <span class="precipitation"></span>
+            <div class="time"><%- m.time %></div>
+            <div class="date"><%- m.date %></div>
+            <div class="location"><%- m.streetAddress %><br><%- m.cityState %></div>
+        <div class="weather-container"></div>
         </div>
         <div class="map">
         </div>
@@ -152,12 +153,21 @@
 </script>
 
 <script id="weather-data" type="text/html">
-
+    <div class="weather-section">
+        <span class="temperature"><%- (Math.floor((m.main.temp - 273.15)* 1.8000 + 32)) %>&#176</span>
+        <span class="precipitation"><%- m.weather[0].description %></span>
+        <img class="weather-icon src="http://openweathermap.org/img/w/<%- m.weather[0].icon %>.png">
+    </div>
 </script>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/lodash/lodash.min.js"></script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/pickadate/lib/legacy.js"></script>
+<script src="bower_components/pickadate/lib/picker.js"></script>
+<script src="bower_components/pickadate/lib/picker.date.js"></script>
+<script src="bower_components/pickadate/lib/picker.time.js"></script>
 <script src="js/app.js"></script>
 <script src="js/appointment-store.js"></script>
 <script src="js/appointment.js"></script>
@@ -168,6 +178,7 @@
 <script src="js/new-view.js"></script>
 <script src="js/edit-view.js"></script>
 <script src="js/details-view.js"></script>
+<script src="js/weather.js"></script>
 <!-- <script src="js/page-manager.js"></script> -->
 <script src="js/init.js"></script>
 

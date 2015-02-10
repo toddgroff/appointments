@@ -27,20 +27,20 @@ button:focus {
 .back-arrow,
 .remove-frame {
     font-family: "appointments-icons";
-    font-size: 36px;
+    font-size: 1.75em;
 }
 
 /*Frame Wall Styling*/
 
 header {
-    height: 100%
-    padding:0.5em;
+    height: 4.5em;
     background: #60839B;
     color: white;
     border-bottom: 5px solid #58646D;
     position: fixed;
     top: 0;
     z-index: 500;
+    width: 100%;
 
 }
 
@@ -48,10 +48,19 @@ header {
     width: 90%;
     margin: 0 auto;
     padding: 1em 0 1em 0;
+    max-height: 2em;
 }
 
-.logo {
-    width: 8%;
+/*.logo {
+    width: 1.70em;
+    font-family: appointments-icons;
+    color: white;
+}*/
+
+.logo-icon {
+    font-size: 2.1em;
+    font-family: "appointments-icons";
+    color: white;
 }
 
 .logo-text {
@@ -110,24 +119,24 @@ header {
     /*height: 6em;*/
     margin: 1em auto;
     background: #7a7a7a;
-    border-top: 0.75em solid #9CB2C1;
-    border-right: 0.75em solid #58646D;
-    border-bottom: 0.75em solid #58646D;
-    border-left: 0.75em solid #9CB2C1;
+    border-top: 9px solid #9CB2C1;
+    border-right: 9px solid #58646D;
+    border-bottom: 9px solid #58646D;
+    border-left: 9px solid #9CB2C1;
     /*background: url("../img/clouds-gili-islands-indonesia-639.jpg");*/
     background-size: cover;
     padding: 1em;
     color: white;
-    text-shadow: 1px 1px 0 #5a5a5a;
+    text-shadow: 1px 1px 0 #58646D;
     position: relative;
     overflow: auto;
 }
 
 .timeframe:active {
-    border-top: 0.75em solid #58646D;
-    border-right: 0.75em solid #9CB2C1;
-    border-bottom: 0.75em solid #9CB2C1;
-    border-left: 0.75em solid #58646D;
+    border-top: 9px solid #58646D;
+    border-right: 9px solid #9CB2C1;
+    border-bottom: 9px solid #9CB2C1;
+    border-left: 9px solid #58646D;
 }
 
 .preview-time,
@@ -138,21 +147,30 @@ header {
 }
 
 .preview-time {
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .preview-title {
-    font-size: 1.5em;
+    font-size: 1.25em;
     padding-top: 0.5em;
     font-family: 'Slabo 13px', sans-serif;
 }
 
-.timeframe--options {
-    width: 3em;
+.preview-location {
+    padding-top: 0.5em;
+    font-size: 0.75em;
+}
+
+.timeframe__options {
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    right: 1em;
+    top: 1.25em;
+}
+
+.timeframe--edit,
+.timeframe--remove {
+    display: block;
+    padding-bottom: 0.5em;
 }
 
 .delete {
@@ -192,18 +210,39 @@ header {
     font-size: 1.15em;
 }
 
-.add-frame {
+/*.add-frame {
     width:  18%;
     position: fixed;
     bottom: 3%;
     right: 5%;
     z-index: 1000;
+}*/
+
+.add-frame {
+    font-size: 5em;
+    font-family: "appointments-icons";
+    color: #60839B;
+    position: fixed;
+    bottom: 3%;
+    right: 5%;
+    z-index: 1000;
+    text-shadow: 0 2px 0 white;
 }
 
-.add-frame:active {
-    opacity: 0.5;
+.add-frame:hover {
+    color: #9CB2C1
 }
 
+.add-frame-container:before {
+    content: "";
+    width: 3.25em;
+    height: 3.25em;
+    background-color: white;
+    position: fixed;
+    bottom: 3%;
+    right: 8%;
+    z-index: 999;
+}
 
 
 /*New Frame Styling*/
@@ -269,11 +308,54 @@ input:focus {
     margin: 1em auto;
     background: #60839B;
     padding: 0.25em;
-    border-width: 5px;
+    border-width: 9px;
     font-family: 'Slabo 13px', sans-serif;
     box-sizing: border-box;
 }
 
+.ui-datepicker {
+    background: white;
+    width: 80%;
+    border: 2px solid #9CB2C1;
+    border-top: none;
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-title,
+.ui-datepicker-calendar {
+    width: 100%;
+}
+
+.ui-datepicker-calendar {
+    margin: 0 0.75em;
+}
+
+.ui-datepicker-header,
+.ui-datepicker-title {
+    text-align: center;
+}
+.ui-datepicker-next,
+.ui-datepicker-prev {
+    padding: 0 4em 0 3.5em;
+}
+.ui-datepicker-calendar thead {
+    text-align: left;
+}
+
+.ui-state-default {
+    text-decoration: none;
+    color: #58646D;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+    color: #e5e5e5;
+}
+
+td:hover {
+    background: #e5e5e5;
+}
 
 /*Frame-view Styling*/
 .frame-view {
@@ -324,44 +406,7 @@ input:focus {
     margin-top: 1.5em;
 }
 
-.ui-datepicker {
-    background: white;
-    width: 80%;
-    border: 2px solid #9CB2C1;
-    border-top: none;
-    box-sizing: border-box;
-    line-height: 1.5em;
-}
 
-.ui-datepicker-header,
-.ui-datepicker-title,
-.ui-datepicker-calendar {
-    width: 100%;
-}
-
-.ui-datepicker-calendar {
-    margin: 0 0.75em;
-}
-
-.ui-datepicker-header,
-.ui-datepicker-title {
-    text-align: center;
-}
-.ui-datepicker-next,
-.ui-datepicker-prev {
-    padding: 0 4em 0 3.5em;
-}
-.ui-datepicker-calendar thead {
-    text-align: left;
-}
-
-.ui-state-default {
-    text-decoration: none;
-}
-
-td:hover {
-    background-color: #e5e5e5;
-}
 
 .title {
     size: 3em;

@@ -6,12 +6,17 @@ app.Appointment = function (spec) {
         throw 'Date is required';
     }
 
-    return {
+    var self = {
         title: spec.title,
         date: spec.date,
         time: spec.time,
         streetAddress: spec.streetAddress,
         cityState: spec.cityState,
-        id: spec.id
+        id: spec.id,
+        dateTime: function () {
+            return self.date + ' ' + self.time;
+        }
     };
+
+    return self;
 }
