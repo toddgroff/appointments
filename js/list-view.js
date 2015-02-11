@@ -6,6 +6,9 @@ app.showListView = function () {
             }
             return 1;
         });
+
+    console.log(appts);    
+
     var template = _.template(listViewHtml, {variable: 'm'});
     var noFrames = $('#no-frames').html();
 
